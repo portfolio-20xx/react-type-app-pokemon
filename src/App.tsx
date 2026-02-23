@@ -11,7 +11,7 @@ function App() {
   const [pokemonData, setPokemonData] = useState<PokemonProps[]>([]);
   const [nextURL, setNextURL] = useState<string | null>(null);
   const [prevURL, setPrevURL] = useState<string | null>(null);
-  const [isFading, setIsFading] = useState(false);
+  const [isFading, setIsFading] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchPokemonData = async () => {
@@ -19,7 +19,7 @@ function App() {
       let res = await getAllPokemon(initialURL);
       // 各ポケモンの詳細なデータを取得
       loadPokemon(res.results);
-      // console.log(res);
+      console.log(res);
       setNextURL(res.next);
       setPrevURL(res.previous); // 最初のページ読み込み時はnullになる
       setLoading(false);
@@ -104,8 +104,8 @@ function App() {
             })}
           </div>
           <div className='btn'>
-            <button onClick={handlePrevPage}>前へ</button>
-            <button onClick={handleNextPage}>次へ</button>
+            <button onClick={handlePrevPage} disabled={!prevURL}>前へ</button>
+            <button onClick={handleNextPage} disabled={!nextURL}>次へ</button>
           </div>
         </>
       )}
