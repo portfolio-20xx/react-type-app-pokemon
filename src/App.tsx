@@ -11,6 +11,7 @@ function App() {
   const [pokemonData, setPokemonData] = useState<PokemonProps[]>([]);
   const [nextURL, setNextURL] = useState<string | null>(null);
   const [prevURL, setPrevURL] = useState<string | null>(null);
+  const [isFading, setIsFading] = useState(false);
 
   useEffect(() => {
     const fetchPokemonData = async () => {
@@ -41,25 +42,48 @@ function App() {
   const handleNextPage = async () => {
     if (!nextURL) return;
 
-    setLoading(true);
-    let data = await getAllPokemon(nextURL);
-    await loadPokemon(data.results);
-    setNextURL(data.next);
-    setPrevURL(data.previous);
-    setLoading(false);
-  };
+    setIsFading(true);
 
+    setTimeout(async () => {
+      setLoading(true);
+
+      let data = await getAllPokemon(nextURL);
+      await loadPokemon(data.results);
+      setNextURL(data.next);
+      setPrevURL(data.previous);
+
+      setLoading(false);
+      setIsFading(false);
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }, 300); // CSSと合わせる
+  };
 
   const handlePrevPage = async () => {
     // 最初のページ読み込み時はprevURLがnullなので、何もしない
     if (!prevURL) return;
 
-    setLoading(true);
-    let data = await getAllPokemon(prevURL);
-    await loadPokemon(data.results);
-    setNextURL(data.next);
-    setPrevURL(data.previous);
-    setLoading(false);
+    setIsFading(true);
+
+    setTimeout(async () => {
+      setLoading(true);
+
+      let data = await getAllPokemon(prevURL);
+      await loadPokemon(data.results);
+      setNextURL(data.next);
+      setPrevURL(data.previous);
+
+      setLoading(false);
+      setIsFading(false);
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }, 300);
   };
 
   return (
@@ -74,7 +98,7 @@ function App() {
       ) : (
         <>
           <Navbar />
-          <div className='pokemonCardWrapper'>
+          <div className={`pokemonCardWrapper ${isFading ? "fade-out" : "fade-in"}`}>
             {pokemonData.map((pokemon, index) => {
               return <Card key={index} pokemon={pokemon} />;
             })}
