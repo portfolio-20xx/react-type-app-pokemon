@@ -1,8 +1,14 @@
 .Card {
   width: 290px;
-  box-shadow: 2px 8px 21px -2px #777777;
-  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
   background-color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+  }
 
   &__image {}
 
