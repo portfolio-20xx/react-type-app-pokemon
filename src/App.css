@@ -14,7 +14,7 @@
   padding: 0 16px;
 }
 
-@media (max-width: 955px) {
+@media (max-width: 1000px) {
   .SkeletonCardWrapper,
   .pokemonCardWrapper {
     grid-template-columns: repeat(2, 1fr);
