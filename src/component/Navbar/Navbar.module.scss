@@ -46,5 +46,21 @@
 
   }
 
-}
+  @media (max-width: 600px) {
+    &__hero {
+      padding: 16px 10px;
 
+      h2 {
+        font-size: 14px;
+      }
+
+      &TechStack {
+        span {
+          font-size: 11px;
+          padding: 4px 8px;
+        }
+      }
+    }
+  }
+
+}

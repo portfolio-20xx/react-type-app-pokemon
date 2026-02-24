@@ -5,11 +5,27 @@
 .SkeletonCardWrapper,
 .pokemonCardWrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  place-items: center;
+  /* grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); */
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
+  place-items: center;
   max-width: 1200px;
   margin: 20px auto;
+  padding: 0 16px;
+}
+
+@media (max-width: 955px) {
+  .SkeletonCardWrapper,
+  .pokemonCardWrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 660px) {
+  .SkeletonCardWrapper,
+  .pokemonCardWrapper {
+    grid-template-columns: 1fr;
+  }
 }
 
 .pokemonCardWrapper {
@@ -89,4 +105,18 @@
 
 .btn button:active:disabled {
   box-shadow: none;
+}
+
+@media (max-width: 480px) {
+  .btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 16px 30px;
+  }
+
+  .btn button {
+    width: 290px;
+  }
 }
