@@ -5,7 +5,7 @@ const Navbar = () => {
     <>
       <nav className={styles.Navbar}>ポケモン図鑑</nav>
       <div className={styles.Navbar__hero}>
-        <h2>PokéAPIからデータを取得し、ページネーション実装</h2>
+        <h2>PokéAPIからデータを取得し、ページネーション実装したSPA</h2>
         <div className={styles.Navbar__heroTechStack}>
           <span>React</span>
           <span>TypeScript</span>
