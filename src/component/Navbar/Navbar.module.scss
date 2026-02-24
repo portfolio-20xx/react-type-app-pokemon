@@ -1,5 +1,5 @@
 .Navbar {
-  height: 72px;
+  height: 65px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,4 +15,36 @@
   position: sticky;
   top: 0;
   z-index: 10;
+
+  &__hero {
+    h2 {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 12px;
+      opacity: 0.8;
+    }
+  
+    &TechStack {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    
+    &TechStack span {
+      background: linear-gradient(135deg, #f0f0f0, #e4e4e4);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    
+    &TechStack span:hover {
+      transform: translateY(-2px);
+    }
+
+  }
+
 }
+
