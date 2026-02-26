@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import { PokemonProps, PokemonListItemProps, getAllPokemon, getPokemon } from "../utils/pokemon";
 
-const sleep = (ms: number): Promise<void> => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve();
-    }, ms);
-  });
-};
+const sleep = (ms: number): Promise<void> =>
+  new Promise((resolve) => setTimeout(resolve, ms));
+// const sleep = (ms: number): Promise<void> => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve();
+//     }, ms);
+//   });
+// };
 
 export const usePokemonPagination = (initialURL: string) => {
   const [currentURL, setCurrentURL] = useState<string>(initialURL);
