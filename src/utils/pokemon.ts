@@ -34,8 +34,12 @@ interface PokemonListResponseProps {
 
 export const getAllPokemon = async (url: string): Promise<PokemonListResponseProps> => {
   const response = await fetch(url);
-  const data = await response.json();
-  return data;
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch pokemon list");
+  }
+
+  return response.json();
 };
 
 export const getPokemon = async (url: string): Promise<PokemonProps> => {
