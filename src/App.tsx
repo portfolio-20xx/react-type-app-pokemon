@@ -16,7 +16,7 @@ const App = () => {
     isFading,
     changePage,
   } = usePokemonPagination(initialURL);
-console.log(pokemonData);
+  console.log(pokemonData);
   return (
     <div className="App">
       {error && <p>{error}</p>}

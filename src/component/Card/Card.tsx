@@ -16,8 +16,7 @@ const Card = ({ pokemon }: CardProps) => {
         <div>タイプ</div>
         {pokemon.types.map((type)=> {
           return (
-            // 名前が重複する可能性が無いと思うので、keyにはtype.type.nameを使用 
-            // 重複しないkeyであれば、indexを使用しても問題ないと思う。
+            // 名前が重複する可能性が無いと思うので、keyにはtype.type.nameを使用 (タイプの名前はユニークであると仮定)
             <div key={type.type.name}>
               <span className={styles.Card__typesName}>{type.type.name}</span>
             </div>
