@@ -32,11 +32,6 @@ export const usePokemonPagination = (initialURL: string) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // フェードアウト中なら、この行で300ms待つ
-        if (isFading) {
-          await sleep(300);
-        }
-
         setLoading(true);
         setError(null);
 
@@ -55,12 +50,13 @@ export const usePokemonPagination = (initialURL: string) => {
     };
 
     fetchData();
-  }, [currentURL]); // ← isFadingは入れない
+  }, [currentURL]);
 
-  const changePage = (url: string) => {
+  const changePage = async (url: string) => {
     setIsFading(true);     // フェード開始
-    setCurrentURL(url);    // URL変更 → useEffect発火
     window.scrollTo({ top: 0, behavior: "smooth" });
+    await sleep(300);      // フェードが終わるまで待つ
+    setCurrentURL(url);    // URL変更 → useEffect発火
   };
 
   return {
