@@ -5,7 +5,7 @@ React × TypeScript で構築した型安全なSPAアプリケーション
 
 https://react-type-app-pokemon.vercel.app/
 
----
+<br>
 
 ## 📝 概要
 
@@ -14,7 +14,7 @@ PokeAPI を利用したポケモン一覧表示アプリです。
 
 React × TypeScript による型安全な実装と、カスタムフックによる責務分離を意識した設計を行っています。
 
----
+<br>
 
 ## 🚀 使用技術
 
@@ -25,7 +25,7 @@ React × TypeScript による型安全な実装と、カスタムフックによ
 - PokeAPI
 - Vercel（GitHub連携による自動デプロイ）
 
----
+<br>
 
 ## 🏗 設計・実装のポイント
 
@@ -42,7 +42,7 @@ UIとデータ取得ロジックを分離することで：
 
 を意識しました。
 
----
+<br>
 
 ### ② 非同期処理の並列実行
 
@@ -51,7 +51,7 @@ UIとデータ取得ロジックを分離することで：
 
 これにより表示速度の最適化を図っています。
 
----
+<br>
 
 ### ③ 状態管理の整理
 
@@ -68,7 +68,7 @@ UIとデータ取得ロジックを分離することで：
 将来的には、お気に入り機能などの追加を想定し、  
 Global State 管理（Zustand等）の導入も検討しています。
 
----
+<br>
 
 ### ④ UX向上のためのアニメーション制御
 
@@ -76,7 +76,7 @@ Global State 管理（Zustand等）の導入も検討しています。
 
 単純なページ更新ではなく、体験設計を意識しました。
 
----
+<br>
 
 ### ⑤ 型安全性の確保
 
@@ -90,25 +90,32 @@ APIレスポンスの型定義を明示的に行っています。
 
 を実現しています。
 
----
+<br>
 
 ## 📂 ディレクトリ構成
-
+```
 src
 ├── component
-│ ├── Card
-│ ├── Navbar
-│ └── SkeletonCard
+│   ├── Card
+│   │   ├── Card.tsx
+│   │   └── Card.module.scss
+│   ├── Navbar
+│   │   ├── Navbar.tsx
+│   │   └── Navbar.module.scss
+│   └── SkeletonCard
+│       ├── SkeletonCard.tsx
+│       └── SkeletonCard.module.scss
 ├── hooks
-│ └── usePokemonPagination.ts
+│   └── usePokemonPagination.ts
 ├── utils
-│ └── pokemon.ts
-└── App.tsx
-
+│   └── pokemon.ts
+├── App.tsx
+└── index.tsx
+```
 
 責務ごとにディレクトリを分離しています。
 
----
+<br>
 
 ## 🔮 今後の改善予定
 
@@ -118,7 +125,7 @@ src
 - テストコードの拡充
 - レスポンシブデザインの強化
 
----
+<br>
 
 ## 👨‍💻 作成者
 
