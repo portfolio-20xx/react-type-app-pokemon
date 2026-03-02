@@ -3,7 +3,7 @@ React × TypeScript で構築した型安全なSPAアプリケーション
 
 ## 🔗 デモ
 
-https://react-type-app-pokemon.vercel.app/
+https://react-type-app-pokemon-rosy.vercel.app/
 
 <br>
 
