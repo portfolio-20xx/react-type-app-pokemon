@@ -124,9 +124,3 @@ src
 - Global State 管理の導入
 - テストコードの拡充
 - レスポンシブデザインの強化
-
-<br>
-
-## 👨‍💻 作成者
-
-Teruo Fujikake
